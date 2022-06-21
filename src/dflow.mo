@@ -67,7 +67,7 @@ module {
         approve : shared(spender: Principal, value: Nat) -> async TxReceipt;
         balanceOf : (user: Principal) -> async Nat;
         burn : shared(user: Principal, value: Nat) -> async TxReceipt;
-        createFlow : shared(flowType: FlowType, sender: Principal, receiver: Principal, flowRate: Nat) -> async Result.Result<Text, Text>;
+        createFlow : shared(flowType: FlowType, sender: Principal, receiver: Principal, flowRate: Nat) -> async Result.Result<Text, TxError>;
         deleteFlow : shared(id: Text) -> async TxReceipt;
         getApps : () -> async [Principal];
         getFlow : (id: Text) -> async ?Flow;
